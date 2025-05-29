@@ -1,11 +1,17 @@
+// pages/api/send-email.js
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async (req, res) => {
+export default async function handler(req, res) {
+  // Handle CORS preflight
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
 
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method Not Allowed" });
@@ -44,7 +50,9 @@ ${message}
 
     return res.status(200).json({ message: "Email sent", id: data.id });
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: "Email failed", error });
+    console.error("Resend API Error:", error);
+    return res
+      .status(500)
+      .json({ message: "Email failed", error: error.message || error });
   }
-};
+}
