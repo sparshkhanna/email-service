@@ -40,7 +40,7 @@ ${message}
 
   try {
     const data = await resend.emails.send({
-      from: "Drone Enquiry <onboarding@resend.dev>",
+      from: "Bharat Drone Stack Enquiry <onboarding@resend.dev>",
       to: companyEmail,
       cc: ["sparshkhanna1@gmail.com"],
       reply_to: email,
