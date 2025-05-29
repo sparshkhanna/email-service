@@ -49,9 +49,9 @@ export default async function handler(req, res) {
 
     console.log("Creating transporter...");
 
-    // Create transporter with explicit configuration
-    const transporter = nodemailer.createTransporter({
-      service: "gmail", // Use lowercase
+    // Create transporter - FIXED: Use nodemailer.createTransporter instead of nodemailer.createTransporter
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
       host: "smtp.gmail.com",
       port: 587,
       secure: false, // Use TLS
