@@ -74,7 +74,7 @@ export default async function handler(req, res) {
     const mailOptions = {
       from: `"${name}" <${process.env.GMAIL_USER}>`, // Use your Gmail as sender
       to: companyEmail,
-      cc: ["sparsh.khanna@icloud.com", "anushka.sikka@dronefederation.in"],
+      cc: ["sparsh.khanna@icloud.com", "rhythm.galrani@dronefederation.in"],
       replyTo: email, // User's email for replies
       subject: `New Enquiry from ${name} (${organisation || "Individual"})`,
       html: `
