@@ -42,7 +42,7 @@ ${message}
     const data = await resend.emails.send({
       from: "Drone Enquiry <onboarding@resend.dev>",
       to: companyEmail,
-      cc: ["sparsh.khanna@icloud.com"],
+      cc: ["sparshkhanna1@gmail.com"],
       reply_to: email,
       subject: `New Enquiry from ${name} (${organisation})`,
       text: fullMessage,
