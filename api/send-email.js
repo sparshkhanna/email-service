@@ -75,7 +75,7 @@ export default async function handler(req, res) {
       from: `"${name}" <${process.env.GMAIL_USER}>`, // Use your Gmail as sender
       to: companyEmail,
       cc: [
-        "sparsh.khanna@icloud.com",
+        "sparshkhanna1@gmail.com",
         "smit@dronefederation.in",
         "shirin.joshi@dronefederation.in",
       ],
