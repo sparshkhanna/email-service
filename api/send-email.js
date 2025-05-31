@@ -81,8 +81,8 @@ export default async function handler(req, res) {
       ],
       replyTo: email, // User's email for replies
       subject: message.startsWith("Subject: BDS:")
-        ? `${message.split("\n")[0].replace("Subject: ", "")} - ${name} (${organisation || "Individual"})`
-        : `Bharat Drone Stack Enquiry from ${name} (${organisation || "Individual"})`,
+        ? `${message.split("\n")[0].replace("Subject: ", "")} - (${organisation || "Individual"})`
+        : `Bharat Drone Stack Enquiry from  (${organisation || "Individual"})`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #333; border-bottom: 2px solid #7c3aed; padding-bottom: 10px;">
